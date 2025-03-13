@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_excel('https://github.com/mgarlabx/python-tutorial/blob/main/pages/equivalences.xlsx?raw=true')
+# df = pd.read_excel('https://github.com/mgarlabx/python-tutorial/blob/main/pages/equivalences.xlsx?raw=true')
+df = pd.read_excel('pages/equivalences.xlsx', engine='openpyxl')
 
 tabStrings, tabNumbers, tabDates, tabCode, tabArrays = st.tabs(['Strings', 'Numbers', 'Dates', 'Code', 'Arrays'])
 
