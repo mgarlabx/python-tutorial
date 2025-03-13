@@ -1,10 +1,11 @@
 import streamlit as st
 import pandas as pd
 
-# df = pd.read_excel('https://github.com/mgarlabx/python-tutorial/blob/main/pages/equivalences.xlsx?raw=true')
-df = pd.read_excel('pages/equivalences.xlsx')
+@st.cache_data
+def read_df():
+    return pd.read_excel('pages/equivalences.xlsx')
 
-tabStrings, tabNumbers, tabDates, tabCode, tabArrays = st.tabs(['Strings', 'Numbers', 'Dates', 'Code', 'Arrays'])
+df = read_df()
 
 def get_row(column, row):
     language = df.columns[column]
@@ -23,6 +24,8 @@ def get_df(tab):
         get_row(3, row)
         get_row(5, row)
         st.divider()
+
+tabStrings, tabNumbers, tabDates, tabCode, tabArrays = st.tabs(['Strings', 'Numbers', 'Dates', 'Code', 'Arrays'])
 
 with tabStrings:
     get_df('Strings')
