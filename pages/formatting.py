@@ -1,8 +1,14 @@
 import streamlit as st
 
-tabValues, tabDates = st.tabs(["Values", "Dates"])
+tabFStrings, tabDates = st.tabs(["f-strings", "Dates"])
 
-with tabValues:
+with tabFStrings:
+    st.code('''
+            myValue = 1234.5678
+            print(f"{myValue:.2f}") # 1234.57
+            # same of
+            print("{:.2f}".format(myValue)) # 1234.57
+            ''')    
     st.code('''
             myValue = 9876543.21
             print(f"{myValue:,.0f}") # integer 9,876,543

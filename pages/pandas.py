@@ -110,20 +110,40 @@ with tabLoops:
     print_code(code)
     
     code = '''
-    # Apply function
-    def increase_total(x):
-        return x * 1.1
-        
-    df['Total'] = df['Total'].apply(increase_total) # increase 'Total' by 10%
+    # Function to be used in this example
+    def format_value(value):
+        return f'$ {value:.2f}'
     '''   
     print_code(code, False)
     
     code = '''
-    # Apply lambda
-    df['Total'] = df['Total'].apply(lambda x: x * 1.1) # increase 'Total' by 10%
+    # Options of "apply"
+    df['Total_formatted'] = df['Total'].apply(format_value)
+    df['Total_formatted'] = df['Total'].apply(lambda x: f'$ {x:.2f}')
+    df['Total_formatted'] = df['Total'].apply('$ {:.2f}'.format)
     '''   
     print_code(code, False)
 
+    code = '''
+    # Options using "map"
+    df['Total_formatted'] = df['Total'].map(format_value)
+    df['Total_formatted'] = df['Total'].map(lambda x: f'$ {x:.2f}')
+    df['Total_formatted'] = df['Total'].map('$ {:.2f}'.format)
+    '''   
+    print_code(code, False)
+    
+    code = '''
+    # Rolling window
+    df['Total_rolling_mean'] = df['Total'].rolling(window=12).mean()
+    df['Total_rolling_sum'] = df['Total'].rolling(window=12).sum()
+    '''   
+    print_code(code, False)
+    
+    code = '''
+    # Percent variation
+    df['Total_variation'] = df['Total'].pct_change()
+    '''   
+    print_code(code, False)
     
 with tabJoins:
     st.write('More about joins [here](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html)')
