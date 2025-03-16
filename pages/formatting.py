@@ -83,13 +83,13 @@ with tabPrint:
                 print(' ')
                 r = 0
                 for i in dre:
-                        print(i[0].ljust(18, ' '), end='\t')
-                        for j in range(1, 7):
-                                print(f'{i[j]:,.0f}'.rjust(12, ' '), end='\t')
-                        print()
-                        if r == 2 or r == 7 or r == 8 or r == 10:
-                                print(' ')
-                        r += 1
+                    print(i[0].ljust(18, ' '), end='\t')
+                    for j in range(1, 7):
+                        print(f'{i[j]:,.0f}'.rjust(12, ' '), end='\t')
+                    print()
+                    if r == 2 or r == 7 or r == 8 or r == 10:
+                        print(' ')
+                    r += 1
             ''')
 
 
