@@ -61,7 +61,7 @@ with tabDates:
 
 with tabPrint:
         st.code('''
-            dre = [
+            P_L = [
                 ['gross revenues', 0, 875000, 2950000, 9270000, 25515000, 46462560],
                 ['bad debt prov', 0, -43750.0, -147500.0, -463500.0, -1275750.0, -2323128.0],
                 ['net revenues', 0, 831250.0, 2802500.0, 8806500.0, 24239250.0, 44139432.0],
@@ -78,11 +78,11 @@ with tabPrint:
             ''')
         
         st.code('''
-                print('DRE'.center(116, ' '))
+                print('P&L'.center(116, ' '))
                 print('-' * 116)
                 print(' ')
                 r = 0
-                for i in dre:
+                for i in P_L:
                     print(i[0].ljust(18, ' '), end='\t')
                     for j in range(1, 7):
                         print(f'{i[j]:,.0f}'.rjust(12, ' '), end='\t')
