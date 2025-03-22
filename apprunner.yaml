@@ -3,9 +3,12 @@ version: 1.0
 runtime: python3
 
 build:
-  commands: "pip3 install streamlit"
+  commands:
+    - pip3 install --upgrade pip
+    - pip3 install streamlit
+    - pip3 install -r requirements.txt
 
 run:
-  command: "python3 -m streamlit run intro.py"
+  command: python3 -m streamlit run intro.py
   network:
     port: 8501
