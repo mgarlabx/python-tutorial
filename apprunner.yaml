@@ -3,10 +3,7 @@ version: 1.0
 runtime: python3
 
 build:
-  commands:
-    - pip3 install --upgrade pip
-    - pip3 install streamlit
-    - pip3 install -r requirements.txt
+  commands: pip3 install streamlit
 
 run:
   command: python3 -m streamlit run intro.py
