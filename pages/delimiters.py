@@ -15,14 +15,14 @@ data = [
     ['_','underscore','traço baixo','guión bajo'],
     ['/','slash','barra','barra'],
     ['\\','backslash','barra invertida','barra invertida'],
-    ['#','hash','cerquilha','almohadilla / numeral'],
+    ['\#','hash','cerquilha','almohadilla / numeral'],
     ['B','bold','negrito','negrita'],
     ['U','underlined','sublinhado','subrayado'],
-    ['I','italic','itálico','itálica'],
+    ['*I*','italic','itálico','itálica'],
     ['!','exclamation mark','ponto de exclamação','signo de exclamación'],
     ['?','question mark','ponto de interrogação','signo de interrogación'],
 ]
 
 df = pd.DataFrame(data, columns=['Symbol','English','Portuguese','Spanish'])
 
-st.dataframe(df, height=710)
+st.table(df)
