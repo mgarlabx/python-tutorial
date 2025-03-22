@@ -1,11 +1,11 @@
 version: 1.0
-
-runtime: python3
-
+runtime: python3 
 build:
-  commands: pip3 install streamlit
-
-run:
+  commands:
+    build:
+      - pip3 install streamlit
+      - pip3 install -r requirements.txt
+run: 
   command: python3 -m streamlit run intro.py
   network:
     port: 8501
