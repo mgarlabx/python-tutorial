@@ -7,5 +7,3 @@ build:
       - pip3 install -r requirements.txt
 run: 
   command: streamlit run intro.py
-  network:
-    port: 8501
